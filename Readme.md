@@ -14,15 +14,13 @@ Because my **brothers won't stop using my laptop like maniacs**!!! Every time I 
 5. **It "collects error info" from 0% to 100%** before "restarting" the computer.
 
 ## How to install (for maximum chaos)
-1. Copy `fake_bsod.vbs` and `fake_bsod.ps1` to `C:\Users\YourUsername\`
+1. Copy `system_update.vbs` and `sys_maintenance.ps1` to `C:\Users\YourUsername\`
 2. Press **Win + R**, type `shell:startup`, and hit Enter.
-3. Paste `fake_bsod.vbs` into the **Startup folder**.
+3. Paste `system_update.vbs` into the **Startup folder**.
 4. Restart and watch the panic unfold!
 
 ## How to stop it (IF YOU'RE ME)
-- If it's running: **Ctrl + Shift + Esc** → **File > Run new task** → Type `explorer.exe`.
-- Delete `fake_bsod.vbs` from `shell:startup`.
-- Remove `fake_bsod.ps1` from your user folder.
+- Run the restore script to bring everything back to normal automatically.
 
 ## The Best Part: BLAME THEM!
 When they freak out, **act shocked and blame them for breaking the laptop!** Say things like:
